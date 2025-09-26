@@ -13,8 +13,8 @@ function divide(firstNum, secondNum) {
     return firstNum / secondNum;
 }
 
-var firstNum =      2222323222;
-var secondNum =     3444232344;
+var firstNum =      2.333222323222;
+var secondNum =     3.4442234;
 var operator =      "+";
 
 const firstNumDisplay =     document.querySelector("#firstNum");

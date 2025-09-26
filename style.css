@@ -11,3 +11,50 @@ body {
     align-items: center;
 }
 
+#main {
+
+    border: solid black 1px;
+
+    height: 800px;
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#display {
+
+    border: 1px solid red;
+    box-sizing: border-box;
+    padding: 10px;
+
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    height: fit-content;
+
+    font-size: 30px;
+
+    flex-wrap: wrap;
+}
+
+p {
+    border: 1px solid blue;
+    margin: 10px;
+}
+
+#buttons {
+    height: 70%;
+    width: inherit;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+button {
+    width: 23%;
+    height: 18%;
+    font-size: 20px;
+}
