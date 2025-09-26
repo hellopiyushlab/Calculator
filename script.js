@@ -1,5 +1,4 @@
 // ARITHMETIC FUNCTIONS
-
 function add(firstNum, secondNum) {
     return firstNum + secondNum;
 }
@@ -13,14 +12,21 @@ function divide(firstNum, secondNum) {
     return firstNum / secondNum;
 }
 
-var firstNum =      2.333222323222;
-var secondNum =     3.4442234;
-var operator =      "+";
+// CHECK OPERATOR AND CALL ARITHEMATIC FUNCTION
+function operate(firstNum, operator, secondNum) {
+    if(operator === "+") {
+        return add(Number(firstNum), Number(secondNum));
+    } else if (operator === "-") {
+        return subtract(Number(firstNum), Number(secondNum));
+    } else if (operator === "*") {
+        return multiply(Number(firstNum), Number(secondNum));
+    } else if (operator === "/") {
+        return divide(Number(firstNum), Number(secondNum));
+    } else {
+        alert("invalud operator!");
+    }
+}
 
-const firstNumDisplay =     document.querySelector("#firstNum");
-const operatorDisplay =     document.querySelector("#operator");
-const secondNumDisplay =    document.querySelector("#secondNum");
-
-firstNumDisplay.textContent =   `${firstNum}`;
-operatorDisplay.textContent =   `${operator}`;
-secondNumDisplay.textContent =  `${secondNum}`;
+const firstNum = '';
+const operator = '';
+const secondNum = '';

@@ -25,7 +25,7 @@ body {
 
 #display {
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
     box-sizing: border-box;
     padding: 10px;
 
@@ -34,13 +34,13 @@ body {
     align-items: flex-end;
     height: fit-content;
 
-    font-size: 30px;
+    font-size: 40px;
 
     flex-wrap: wrap;
 }
 
 p {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     margin: 10px;
 }
 
