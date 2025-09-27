@@ -33,6 +33,8 @@ let firstNum =  '';
 let operator =  '';
 let secondNum = '';
 
+let oldOperator = '';
+
 // displays
 let firstNumDisplay = document.querySelector("#firstNum");
 let secondNumDisplay = document.querySelector("#secondNum");
@@ -69,22 +71,45 @@ operatorButtons.forEach(
         "click",
         (e) => {
             // executes when an operator is pressed
-            operator = e.target.textContent; // change the operator accordingly
-            operatorDisplay.textContent = operator; // display it
+
+            // only change the operator when secondNum is empty
+            if (secondNum != '') {
+                // when second number is not empty
+                resultFuncTwo(oldOperator, e.target.textContent);
+            } else {
+                operator = e.target.textContent; // change the operator accordingly
+                operatorDisplay.textContent = operator; // display it
+                oldOperator = operator;
+            }
         }
     )
 );
 
 const equalsToButton = document.querySelector("#equalsTo");
-equalsToButton.addEventListener("click", (e) => {
-    // executes when = is pressed
-    let result = operate(firstNum, operator, secondNum); // calculate result
-    firstNum = result; // store the result in firstNum
+equalsToButton.addEventListener("click", resultFunc);
 
-    // change the second number and operator, and show them
+function resultFunc() {
+    // executes when = is pressed
+    let result =    operate(firstNum, operator, secondNum); // calculate result
+    firstNum =      result; // store the result in firstNum
+
+    // change the second number and operator, and show everything
+    secondNum =     '';
+    operator =      '';
+    firstNumDisplay.textContent =   firstNum;
+    secondNumDisplay.textContent =  secondNum;
+    operatorDisplay.textContent =   operator;
+}
+
+function resultFuncTwo(oldOperator, newOperator) {
+    let oldOp =     oldOperator;
+    let result =    operate(firstNum, oldOp, secondNum);
+    firstNum =      result;
+    
+    // change the second number and operator, and show everything
     secondNum = '';
-    operator = '';
-    firstNumDisplay.textContent = firstNum;
-    secondNumDisplay.textContent = secondNum;
-    operatorDisplay.textContent = operator;
-});
+    operator = newOperator;
+    firstNumDisplay.textContent =   firstNum;
+    secondNumDisplay.textContent =  secondNum;
+    operatorDisplay.textContent =   operator;
+}
