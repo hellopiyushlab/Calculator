@@ -9,20 +9,24 @@ function multiply(firstNum, secondNum) {
     return firstNum * secondNum;
 }
 function divide(firstNum, secondNum) {
-    return firstNum / secondNum;
+    if (secondNum === 0) {
+        alert("💀 bro is an idiot");
+    } else {
+        return firstNum / secondNum;
+    }
 }
 
 // CHECK OPERATOR AND CALL ARITHEMATIC FUNCTION
 // function operate
 function operate(firstNum, operator, secondNum) {
     if(operator === "+") {
-        return add(Number(firstNum), Number(secondNum));
+        return add(Number(firstNum), parseNumber(secondNum));
     } else if (operator === "-") {
-        return subtract(Number(firstNum), Number(secondNum));
+        return subtract(Number(firstNum), parseNumber(secondNum));
     } else if (operator === "x") {
-        return multiply(Number(firstNum), Number(secondNum));
+        return multiply(Number(firstNum), parseNumber(secondNum));
     } else if (operator === "/") {
-        return divide(Number(firstNum), Number(secondNum));
+        return divide(Number(firstNum), parseNumber(secondNum));
     } else {
         alert("invalud operator!");
     }
@@ -140,6 +144,9 @@ function resultFunc() {
     firstNumDisplay.textContent =   firstNum;
     secondNumDisplay.textContent =  secondNum;
     operatorDisplay.textContent =   operator;
+
+    secondNumDisplay.classList.add("hidden");
+    operatorDisplay.classList.add("hidden");
 }
 
 // result function for when any operator is pressed 2nd time
@@ -157,4 +164,15 @@ function resultFuncTwo(oldOperator, newOperator) {
     firstNumDisplay.textContent =   firstNum;
     secondNumDisplay.textContent =  secondNum;
     operatorDisplay.textContent =   operator;
+}
+
+
+// to handle % 
+function parseNumber(str) {
+    if (str.endsWith("%")) {
+        let a = Number(str.slice(0, -1)) / 100;
+        return a * Number(firstNum);
+    } else {
+        return Number(str);
+    }
 }

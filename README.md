@@ -5,5 +5,5 @@
 - [x] hidden class
 - [x] delete button
 - [ ] curve brackets
-- [ ] clear everything
-- [ ] percentage
+- [x] clear everything
+- [x] percentage
