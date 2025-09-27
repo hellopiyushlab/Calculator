@@ -40,6 +40,10 @@ let firstNumDisplay = document.querySelector("#firstNum");
 let secondNumDisplay = document.querySelector("#secondNum");
 let operatorDisplay = document.querySelector("#operator");
 
+// to hide the classes in the beginning
+operatorDisplay.classList.add("hidden");
+secondNumDisplay.classList.add("hidden");
+
 const numberButtons = document.querySelectorAll(".number");
 numberButtons.forEach(
     (numberButton) => numberButton.addEventListener(
@@ -47,6 +51,7 @@ numberButtons.forEach(
         (e) =>  {
             // executes when a number is pressed
             if (operator==='') {
+                secondNumDisplay.classList.remove("hidden");
                 // meaning: we are on first number
                 // so, add the string number to first number
                 firstNum = firstNum + e.target.textContent;
@@ -54,6 +59,7 @@ numberButtons.forEach(
                 firstNumDisplay.textContent = firstNum;
                 console.log(firstNum); // for debugging
             } else {
+                secondNumDisplay.classList.remove("hidden");
                 // meaning: there is an operator
                 // so, we add the string number to second number
                 secondNum = secondNum + e.target.textContent;
@@ -77,6 +83,7 @@ operatorButtons.forEach(
                 // when second number is not empty
                 resultFuncTwo(oldOperator, e.target.textContent);
             } else {
+                operatorDisplay.classList.remove("hidden");
                 operator = e.target.textContent; // change the operator accordingly
                 operatorDisplay.textContent = operator; // display it
                 oldOperator = operator;
@@ -85,9 +92,43 @@ operatorButtons.forEach(
     )
 );
 
+// equals to button
 const equalsToButton = document.querySelector("#equalsTo");
 equalsToButton.addEventListener("click", resultFunc);
 
+// delete button
+const del = document.querySelector("#backspace");
+del.addEventListener("click", () => {
+    // when backspace is pressed
+    if (secondNum === '' && operator === '') {
+        firstNum = firstNum.slice(0,-1);
+        firstNumDisplay.textContent = firstNum;
+    } else if (secondNum === '') {
+        operator = '';
+        operatorDisplay.textContent = operator;
+        operatorDisplay.classList.add("hidden");
+    } else if (secondNum != '') {
+        secondNum = secondNum.slice(0,-1);
+        secondNumDisplay.textContent = secondNum;
+    } else {
+        alert("something went wrong!");
+    }
+});
+
+// AC button
+const clearAll = document.querySelector("#clearAll");
+clearAll.addEventListener("click", () => {
+    firstNum =  '';
+    secondNum = '';
+    operator =  '';
+    firstNumDisplay.textContent =   firstNum;
+    secondNumDisplay.textContent =  secondNum;
+    operatorDisplay.textContent =   operator;
+    operatorDisplay.classList.add("hidden");
+    secondNumDisplay.classList.add("hidden");
+});
+
+// result function for when = is pressed
 function resultFunc() {
     // executes when = is pressed
     let result =    operate(firstNum, operator, secondNum); // calculate result
@@ -101,7 +142,11 @@ function resultFunc() {
     operatorDisplay.textContent =   operator;
 }
 
+// result function for when any operator is pressed 2nd time
 function resultFuncTwo(oldOperator, newOperator) {
+
+    secondNumDisplay.classList.remove("hidden");
+
     let oldOp =     oldOperator;
     let result =    operate(firstNum, oldOp, secondNum);
     firstNum =      result;
