@@ -3,7 +3,7 @@
 - [x] create normal calculations calculator
 - [x] add iterative capability
 - [x] hidden class
-- [ ] delete button
+- [x] delete button
 - [ ] curve brackets
 - [ ] clear everything
 - [ ] percentage
