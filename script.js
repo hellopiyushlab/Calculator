@@ -13,6 +13,7 @@ function divide(firstNum, secondNum) {
 }
 
 // CHECK OPERATOR AND CALL ARITHEMATIC FUNCTION
+// function operate
 function operate(firstNum, operator, secondNum) {
     if(operator === "+") {
         return add(Number(firstNum), Number(secondNum));
@@ -27,6 +28,32 @@ function operate(firstNum, operator, secondNum) {
     }
 }
 
-const firstNum = '';
-const operator = '';
-const secondNum = '';
+let firstNum =  '';
+let operator =  '';
+let secondNum = '';
+
+
+const numberButtons = document.querySelectorAll(".number");
+numberButtons.forEach(
+    (numberButton) => numberButton.addEventListener(
+        "click",
+        (e) =>  {
+            // executes when a number is pressed
+        }
+    )
+);
+
+const operatorButtons = document.querySelectorAll(".operator");
+operatorButtons.forEach(
+    (operatorButton) => operatorButton.addEventListener(
+        "click",
+        (e) => {
+            // executes when an operator is pressed
+        }
+    )
+);
+
+const equalsToButton = document.querySelector("#equalsTo");
+equalsToButton.addEventListener("click", (e) => {
+    // executes when = is pressed
+});
