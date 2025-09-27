@@ -1,3 +1,197 @@
+:root {
+    --boxColor: #ffffff;
+    --buttonBackgroundColor: #f8f4f5;
+    --buttonBackgroundColorTwo: #faa19b;
+    --buttonBackgroundColorThree: #feb080;
+    --buttonBackgroundColorFour: #fbd39f;
+    --buttonBackgroundColorFive: #fedbbb;
+}
+
 .hidden {
     display: none;
+}
+
+body {
+    font-family: 'Roboto';font-size: 22px;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #fff3a9, #fdd29b, #fff3a9, #fdd29b);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+}
+
+/* Keyframes for the smooth gradient movement */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#main {
+    background-color: var(--boxColor);
+    
+     /* I will adjust them accordingly */
+    height: 510px;
+    width: 330px;
+
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+#display {
+    height: 100px;
+    border-radius: 20px;
+    background-color: var(--buttonBackgroundColor);
+    box-sizing: border-box;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+#buttons {
+    height: 410px;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.top {
+    height: 80%;
+    /* background-color: yellow;  */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bottom {
+    height: 20%;
+    display: flex;
+}
+
+.top div {
+    height: 70px;
+    width: 70px;
+    background-color: var(--buttonBackgroundColor);
+    margin-left: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top div:hover,
+#equalsTo:hover,
+#backspace:hover,
+#clearAll:hover {
+    transform: scale(1.12);
+}
+
+#equalsTo, #backspace {
+    width: 110px;
+    height: 70px;
+    background-color: var(--buttonBackgroundColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#clearAll {
+    height: 70px;
+    width: 70px;
+    background-color: var(--buttonBackgroundColor);
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#multiply {
+    background-color: var(--buttonBackgroundColorTwo);
+}
+#subtract {
+    background-color: var(--buttonBackgroundColorThree);
+}
+#add {
+    background-color: var(--buttonBackgroundColorFour);
+}
+#divide {
+    background-color: var(--buttonBackgroundColorFive);
+}
+
+
+.animated-gradient {
+    background: linear-gradient(270deg, var(--buttonBackgroundColorTwo), var(--buttonBackgroundColorThree));
+    background-size: 400% 400%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#footer {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+#github-link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s;
+}
+
+#github-link img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0); /* makes it dark */
+}
+
+#github-link:hover {
+    transform: scale(1.1);
 }

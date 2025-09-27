@@ -6,4 +6,6 @@
 - [x] delete button
 - [x] clear everything
 - [x] percentage
-- [ ] Nice CSS
+- [x] Nice CSS
+- [ ] NEW README
+- [ ] GitHub Pages

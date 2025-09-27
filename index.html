@@ -4,42 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div id="main">
+
         <div id="display">
             <p id="firstNum"></p>
             <p id="operator"></p>
             <p id="secondNum"></p>
         </div>
+
         <div id="buttons">
 
             <div class="top">
-                <button id="clearAll">AC</button>
-                <button class="number">%</button> 
-                <button id="backspace">Delete</button> 
-            </div>
+                <div class="number">7</div>
+                <div class="number">8</div>
+                <div class="number">9</div>
+                <div class="operator multiply" id="multiply">x</div>
+                <div class="number">4</div>
+                <div class="number">5</div>
+                <div class="number">6</div>
+                <div class="operator subtract" id="subtract">-</div>
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+                <div class="operator add" id="add">+</div>
+                <div class="number">0</div>
+                <div class="number">.</div>
+                <div class="number">%</div>
+                <div class="operator divide" id="divide">/</div>
+                
+            </div>  
+            
             <div class="bottom">
-                <button class="number">7</button>
-                <button class="number">8</button>
-                <button class="number">9</button>
-                <button class="operator">x</button>
-                <button class="number">4</button>
-                <button class="number">5</button>
-                <button class="number">6</button>
-                <button class="operator">-</button>
-                <button class="number">1</button>
-                <button class="number">2</button>
-                <button class="number">3</button>
-                <button class="operator">+</button>
-                <button class="number">0</button>
-                <button class="number">.</button>
-                <button class="operator">/</button>
-                <button id="equalsTo">=</button>
-            </div>         
+                <div id="equalsTo" class="animated-gradient">=</div>
+                <div id="backspace">Delete</div> 
+                <div id="clearAll">AC</div>         
+            </div>
+
         </div>
+    </div>
+
+    <div id="footer">
+        <a href="https://github.com/hellopiyushlab/Calculator" target="_blank" id="github-link">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+            GitHub
+        </a>
     </div>
 </body>
 </html>
